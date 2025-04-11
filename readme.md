@@ -1,0 +1,1 @@
+A python based calculator designed to find critical values, extremas, minimas, and other relevant things based on the function and variable as input.
