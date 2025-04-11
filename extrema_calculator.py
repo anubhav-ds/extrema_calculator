@@ -1,5 +1,8 @@
 from  sympy import *
-from sympy.parsing.sympy_parser import parse_expr  
+from sympy.parsing.sympy_parser import parse_expr 
+"""
+This script calculates the local extrema (maxima and minima) of a given function using symbolic differentiation.
+"""
 
 def extrema_calculator(fx, x):
     x = symbols(str(x))
@@ -7,6 +10,7 @@ def extrema_calculator(fx, x):
     maximas = []
     minimas = []
 
+    # Compute the first and second derivatives. And then calculate critical points
     diff1 = diff(fx, x)
     diff2 = diff(fx, x, 2)
     critical_points = solve(diff1, x)
@@ -18,9 +22,10 @@ def extrema_calculator(fx, x):
             maximas.append(i)
         else:
             j += 1
-            
+    
+    # Check if the critical points are local extrema/minima or not. And print the results.
     if j == len(critical_points):
-        print("No local extrema found")
+        print("No local extrema/minima found")
     else:
         maximas = [float(i) for i in maximas]
         minimas = [float(i) for i in minimas]
